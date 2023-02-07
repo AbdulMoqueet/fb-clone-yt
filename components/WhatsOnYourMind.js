@@ -27,7 +27,6 @@ const WhatsOnYourMind = () => {
   const { data: session } = useSession();
 
   const addImageToPost = (e) => {
-    console.log("addImageToPost ", e.target.files);
     const reader = new FileReader();
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);

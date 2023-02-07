@@ -43,7 +43,6 @@ const Post = ({ data, id }) => {
             <MdOutlineClose
               className="cursor-pointer"
               onClick={() => {
-                // console.log("deleting: ", data.id);
                 deleteDoc(doc(db, "posts", id));
               }}
             />

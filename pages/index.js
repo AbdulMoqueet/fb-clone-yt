@@ -11,8 +11,6 @@ export default function Home() {
   const { data: session } = useSession();
   const router = useRouter();
 
-  console.log("query: ", router.query);
-
   if (!session && !router.query.login) return <Login />;
 
   return (
