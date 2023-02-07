@@ -53,7 +53,7 @@ const Navbar = () => {
 
         <img
           className="w-[44px] cursor-pointer rounded-full"
-          src={session.user?.image}
+          src={session?.user?.image}
           alt="dp"
           onClick={signOut}
         />

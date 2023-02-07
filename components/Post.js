@@ -11,6 +11,13 @@ import { db } from "../firebase";
 const Post = ({ data, id }) => {
   const { data: session } = useSession();
 
+  const isAdmin = (post_data_id, session_id) => {
+    if (post_data_id === session_id) return true;
+    else if (session_id === "103122479951529079566") return true;
+
+    return false;
+  };
+
   return (
     <div className="py-4 bg-white rounded-[17px] shadow-md mt-5">
       <div className="px-4 flex justify-between items-center">
@@ -32,11 +39,11 @@ const Post = ({ data, id }) => {
 
         <div className="text-gray-500 text-[26px] flex gap-4">
           <FiMoreHorizontal className="cursor-pointer" />
-          {data.id === session.user.uid && (
+          {isAdmin(data.id, session?.user?.uid) && (
             <MdOutlineClose
               className="cursor-pointer"
               onClick={() => {
-                console.log("deleting: ", id);
+                // console.log("deleting: ", data.id);
                 deleteDoc(doc(db, "posts", id));
               }}
             />

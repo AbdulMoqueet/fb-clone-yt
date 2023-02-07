@@ -76,7 +76,7 @@ const WhatsOnYourMind = () => {
       <div className="flex gap-4 border-b border-gray-300 pb-4">
         <img
           className="w-[44px] h-[44px] object-cover rounded-full"
-          src={session.user?.image}
+          src={session?.user?.image}
           alt="dp"
         />
 

@@ -65,7 +65,7 @@ const Story = () => {
         <div className="w-[112px] shadow-md rounded-[15px] pb-2 shrink-0">
           <img
             className="w-[112px] h-[151px] rounded-t-[15px] object-cover"
-            src={session.user?.image}
+            src={session?.user?.image}
             alt="dp"
           />
           <div>

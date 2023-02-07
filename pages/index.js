@@ -5,11 +5,15 @@ import Navbar from "../components/Navbar";
 import LeftSidebar from "../components/LeftSidebar";
 import RightSidebar from "../components/RightSidebar";
 import Feed from "../components/Feed";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const { data: session } = useSession();
+  const router = useRouter();
 
-  if (!session) return <Login />;
+  console.log("query: ", router.query);
+
+  if (!session && !router.query.login) return <Login />;
 
   return (
     <>

@@ -11,8 +11,8 @@ const LeftSidebar = () => {
     <div className="px-4 fixed mt-5 hidden lg:block">
       <div className="flex flex-col gap-2">
         <LeftSidebarLink
-          image={session.user?.image}
-          text={session.user?.name}
+          image={session?.user?.image}
+          text={session?.user?.name}
         />
         <LeftSidebarLink image="/friends.png" text="Friends" />
         <LeftSidebarLink image="/group.png" text="Groups" />
